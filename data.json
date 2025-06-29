@@ -3,12 +3,13 @@
     "name": "Yannick Dieu",
     "title": "Développeur Full Stack",
     "location": "Arpajon sur Cère 15130",
-    "email": "yannick.dieu.13@gmail.com"
+    "email": "yannick.dieu.13@gmail.com",
+    "photo": "photo.jpg"
   },
   "education": [
     {
       "label": "Licence Professionnelle Développement d'applications mobiles",
-      "school": "IUT de l'Université d'Auvergne - Aubière",
+      "school": "IUT de l'Université d'Auvergne",
       "start": "septembre 2015",
       "end": "septembre 2016",
       "location": "Aubière, France",
@@ -17,7 +18,7 @@
     },
     {
       "label": "DUT Informatique",
-      "school": "IUT de l'Université d'Auvergne - Aubière",
+      "school": "IUT de l'Université d'Auvergne",
       "start": "septembre 2013",
       "end": "juin 2015",
       "location": "Aubière, France",
@@ -27,55 +28,67 @@
   ],
   "experience": [
     {
-      "title": "Développeur Full Stack",
       "company": "Cegid",
-      "product": "Cegid DataFinance",
-      "start": "septembre 2024",
-      "end": "aujourd'hui",
+      "logo": "logos/cegid.png",
       "location": "Aurillac, France",
-      "description": "Développement full stack sur la plateforme DataFinance.",
-      "logo": "logos/cegid.png"
+      "roles": [
+        {
+          "title": "Développeur Full Stack",
+          "product": "Cegid DataFinance",
+          "start": "septembre 2024",
+          "end": "aujourd'hui",
+          "description": "Développement full stack sur la plateforme DataFinance."
+        },
+        {
+          "title": "Développeur",
+          "product": "Cegid XRP Ultimate Finance",
+          "start": "janvier 2019",
+          "end": "septembre 2024",
+          "description": "Développement et maintenance de l’ERP XRP Ultimate Finance (ex-Qualiac)"
+        }
+      ]
     },
     {
-      "title": "Développeur",
-      "company": "Cegid",
-      "product": "Cegid XRP Ultimate Finance",
-      "start": "janvier 2019",
-      "end": "septembre 2024",
-      "location": "Aurillac, France",
-      "description": "Développement et maintenance de l’ERP XRP Ultimate Finance (ex-Qualiac)",
-      "logo": "logos/cegid.png"
-    },
-    {
-      "title": "Développeur",
       "company": "Qualiac",
-      "product": "Qualiac ERP",
-      "start": "juillet 2018",
-      "end": "décembre 2018",
+      "logo": "logos/qualiac.jpg",
       "location": "Aurillac, France",
-      "description": "Développement et maintenance de l’ERP Qualiac.",
-      "logo": "logos/qualiac.jpg"
+      "roles": [
+        {
+          "title": "Développeur",
+          "product": "Qualiac ERP",
+          "start": "juillet 2018",
+          "end": "décembre 2018",
+          "description": "Développement et maintenance de l’ERP Qualiac."
+        }
+      ]
     },
     {
-      "title": "Développeur",
       "company": "Greenspark",
-      "product": "Sparkwine ERP et solutions liées",
-      "start": "septembre 2016",
-      "end": "juillet 2018",
+      "logo": "logos/greenspark.jpg",
       "location": "Génelard, France",
-      "description": "Développement de modules pour l’ERP Sparkwine.",
-      "logo": "logos/greenspark.jpg"
-    },
-    {
-      "title": "Développeur en alternance",
-      "company": "Greenspark",
-      "product": "Sparkwine ERP et solutions liées",
-      "start": "octobre 2015",
-      "end": "septembre 2016",
-      "location": "Génelard, France",
-      "description": "Alternance en développement logiciel.",
-      "logo": "logos/greenspark.jpg"
+      "roles": [
+        {
+          "title": "Développeur",
+          "product": "Sparkwine ERP et solutions liées",
+          "start": "septembre 2016",
+          "end": "juillet 2018",
+          "description": "Développement de modules pour l’ERP Sparkwine."
+        },
+        {
+          "title": "Développeur en alternance",
+          "product": "Sparkwine ERP et solutions liées",
+          "start": "octobre 2015",
+          "end": "septembre 2016",
+          "description": "Alternance en développement logiciel."
+        }
+      ]
     }
+  ],
+  "hobbies": [
+    "Cinéma",
+    "Sport automobile",
+    "Basketball",
+    "Bricolage"
   ],
   "projects": [
     {

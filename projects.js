@@ -23,56 +23,96 @@ function showSection(section) {
     projectDetail.style.display = 'none';
 }
 
+function renderProfile() {
+    const profile = DATA.profile;
+    return `
+        <div class="profile-block">
+            <div class="profile-photo">
+                ${profile.photo ? `<img src="${profile.photo}" alt="Photo de ${profile.name}">` : '<div class="photo-placeholder">Photo</div>'}
+            </div>
+            <div class="profile-infos">
+                <h1>${profile.name}</h1>
+                <h2>${profile.title}</h2>
+                <p class="location">
+                    <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(profile.location)}" target="_blank">${profile.location}</a>
+                </p>
+                <p class="email"><a href="mailto:${profile.email}">${profile.email}</a></p>
+            </div>
+        </div>
+    `;
+}
+
 function renderCV() {
     if (!DATA.profile) return;
+    const hobbyIcons = {
+        "Cinéma": "🎬",
+        "Sport automobile": "🏎️",
+        "Basketball": "🏀",
+        "Bricolage": "🛠️"
+    };
     cvSection.innerHTML = `
-        <header>
-            <h1>${DATA.profile.name}</h1>
-            <h2>${DATA.profile.title}</h2>
-            <p class="location">
-                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(DATA.profile.location)}" target="_blank">${DATA.profile.location}</a>
-            </p>
-        </header>
-        <h3>Formation</h3>
-        <ul>
-            ${DATA.education.map(e => `
-                <li>
-                    <strong>${e.label}</strong> – ${e.school}<br>
-                    <span class="exp-dates">${e.start} - ${e.end}</span>
-                    ${e.location ? `<br><span class="exp-location"><a href='https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(e.location)}' target='_blank'>${e.location}</a></span>` : ''}
-                    ${e.mention ? `<br><span class="exp-mention">${e.mention}</span>` : ''}
-                    ${e.description ? `<br><span class="exp-desc">${e.description}</span>` : ''}
-                </li>
-            `).join('')}
-        </ul>
+        ${renderProfile()}
         <h3>Expérience professionnelle</h3>
-        <ul>
-            ${DATA.experience.map(x => `
-                <li style="display:flex;align-items:center;gap:1em;">
-                    ${x.logo ? `<img src='${x.logo}' alt='${x.company} logo' style='height:32px;width:auto;border-radius:4px;'>` : ''}
-                    <div>
-                        <strong>${x.title}</strong> – ${x.company}, produit ${x.product}<br>
-                        <span class="exp-dates">${x.start} - ${x.end}</span>
-                        ${x.location ? `<br><span class="exp-location"><a href='https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.location)}' target='_blank'>${x.location}</a></span>` : ''}
-                        ${x.description ? `<br><span class="exp-desc">${x.description}</span>` : ''}
+        <div class="exp-list">
+            ${DATA.experience.map((x, i) => `
+                <div class="exp-item">
+                    ${x.logo ? `<div class='exp-logo'><img src='${x.logo}' alt='${x.company} logo'></div>` : ''}
+                    <div class="exp-content">
+                        <div class="exp-company"><strong>${x.company}</strong>${x.location ? `<span class='exp-location'><a href='https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.location)}' target='_blank'>${x.location}</a></span>` : ''}</div>
+                        <ul class="exp-roles">
+                        ${x.roles.map(role => `
+                            <li>
+                                <span class="exp-title">${role.title}</span> – <span class="exp-product">${role.product}</span><br>
+                                <span class="exp-dates">${role.start} - ${role.end}</span><br>
+                                <span class="exp-desc">${role.description}</span>
+                            </li>
+                        `).join('')}
+                        </ul>
                     </div>
-                </li>
+                </div>
             `).join('')}
-        </ul>
-        <h3>Contact</h3>
-        <ul>
-            <li>Email : <a href="mailto:${DATA.profile.email}">${DATA.profile.email}</a></li>
-        </ul>
+        </div>
+        <h3>Formation</h3>
+        <div class="edu-list">
+            ${DATA.education.map(e => `
+                <div class="edu-item">
+                    ${e.logo ? `<div class='edu-logo'><img src='${e.logo}' alt='${e.school} logo'></div>` : ''}
+                    <div class="edu-content">
+                        <div class="edu-title"><strong>${e.label}</strong></div>
+                        <div class="edu-school">${e.school}</div>
+                        <div class="edu-dates">${e.start} - ${e.end}</div>
+                        ${e.location ? `<div class="edu-location"><a href='https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(e.location)}' target='_blank'>${e.location}</a></div>` : ''}
+                        ${e.mention ? `<div class="edu-mention">${e.mention}</div>` : ''}
+                        ${e.description ? `<div class="edu-desc">${e.description}</div>` : ''}
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+        <h3>Hobbies</h3>
+        <div class="hobbies-block">
+            ${DATA.hobbies.map(hobby => `
+                <span class="hobby-item">
+                    <span class="hobby-icon">${hobbyIcons[hobby] || "⭐"}</span> ${hobby}
+                </span>
+            `).join('')}
+        </div>
     `;
 }
 
 function renderProjects() {
-    projectsList.innerHTML = '';
+    // Afficher le bloc profil en haut de la page projets
+    projetsSection.innerHTML = `
+        ${renderProfile()}
+        <h1>Projets</h1>
+        <div id="projects-list"></div>
+        <div id="project-detail" style="display:none;"></div>
+    `;
+    const projectsList = document.getElementById('projects-list');
     DATA.projects.forEach(proj => {
         const div = document.createElement('div');
         div.className = 'project';
-        div.innerHTML = `<div class="project-title">${proj.title}</div>
-                         <div class="project-desc">${proj.description}</div>`;
+        div.innerHTML = `<div class=\"project-title\">${proj.title}</div>
+                         <div class=\"project-desc\">${proj.description}</div>`;
         div.onclick = () => showProjectDetail(proj.id);
         projectsList.appendChild(div);
     });
