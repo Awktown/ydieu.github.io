@@ -9,13 +9,20 @@
     {
       "label": "Licence Professionnelle Développement d'applications mobiles",
       "school": "IUT de l'Université d'Auvergne - Aubière",
-      "years": "2015-2016"
+      "start": "septembre 2015",
+      "end": "septembre 2016",
+      "location": "Aubière, France",
+      "mention": "",
+      "description": "Formation axée sur le développement mobile (Android, iOS, cross-plateforme)."
     },
     {
       "label": "DUT Informatique",
       "school": "IUT de l'Université d'Auvergne - Aubière",
-      "years": "2013-2015",
-      "mention": "Mention Bien"
+      "start": "septembre 2013",
+      "end": "juin 2015",
+      "location": "Aubière, France",
+      "mention": "Mention Bien",
+      "description": "Bases solides en algorithmique, développement logiciel, réseaux et bases de données."
     }
   ],
   "experience": [
@@ -23,25 +30,46 @@
       "title": "Développeur Full Stack",
       "company": "Cegid",
       "product": "Cegid DataFinance",
-      "period": "septembre 2024 - aujourd'hui"
+      "start": "septembre 2024",
+      "end": "aujourd'hui",
+      "location": "Aurillac, France",
+      "description": "Développement full stack sur la plateforme DataFinance."
     },
     {
       "title": "Développeur",
       "company": "Cegid",
       "product": "Cegid XRP Ultimate Finance",
-      "period": "juillet 2018 - septembre 2024"
+      "start": "janvier 2019",
+      "end": "septembre 2024",
+      "location": "Aurillac, France",
+      "description": "Développement et maintenance de l’ERP XRP Ultimate Finance (ex-Qualiac"
+    },
+    {
+      "title": "Développeur",
+      "company": "Qualiac",
+      "product": "Qualiac ERP",
+      "start": "juillet 2018",
+      "end": "décembre 2018",
+      "location": "Aurillac, France",
+      "description": "Développement et maintenance de l’ERP Qualiac."
     },
     {
       "title": "Développeur",
       "company": "Greenspark",
       "product": "Sparkwine ERP et solutions liées",
-      "period": "septembre 2016 - juillet 2018"
+      "start": "septembre 2016",
+      "end": "juillet 2018",
+      "location": "Génelard, France",
+      "description": "Développement de modules pour l’ERP Sparkwine."
     },
     {
       "title": "Développeur en alternance",
       "company": "Greenspark",
       "product": "Sparkwine ERP et solutions liées",
-      "period": "octobre 2015 - septembre 2016"
+      "start": "octobre 2015",
+      "end": "septembre 2016",
+      "location": "Génelard, France",
+      "description": "Alternance en développement logiciel."
     }
   ],
   "projects": [

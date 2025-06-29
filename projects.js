@@ -29,15 +29,32 @@ function renderCV() {
         <header>
             <h1>${DATA.profile.name}</h1>
             <h2>${DATA.profile.title}</h2>
-            <p class="location">${DATA.profile.location}</p>
+            <p class="location">
+                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(DATA.profile.location)}" target="_blank">${DATA.profile.location}</a>
+            </p>
         </header>
         <h3>Formation</h3>
         <ul>
-            ${DATA.education.map(e => `<li><strong>${e.label}</strong> – ${e.school} (${e.years}${e.mention ? ' – ' + e.mention : ''})</li>`).join('')}
+            ${DATA.education.map(e => `
+                <li>
+                    <strong>${e.label}</strong> – ${e.school}<br>
+                    <span class="exp-dates">${e.start} - ${e.end}</span>
+                    ${e.location ? `<br><span class="exp-location"><a href='https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(e.location)}' target='_blank'>${e.location}</a></span>` : ''}
+                    ${e.mention ? `<br><span class="exp-mention">${e.mention}</span>` : ''}
+                    ${e.description ? `<br><span class="exp-desc">${e.description}</span>` : ''}
+                </li>
+            `).join('')}
         </ul>
         <h3>Expérience professionnelle</h3>
         <ul>
-            ${DATA.experience.map(x => `<li><strong>${x.title}</strong> – ${x.company}, produit ${x.product} (${x.period})</li>`).join('')}
+            ${DATA.experience.map(x => `
+                <li>
+                    <strong>${x.title}</strong> – ${x.company}, produit ${x.product}<br>
+                    <span class="exp-dates">${x.start} - ${x.end}</span>
+                    ${x.location ? `<br><span class="exp-location"><a href='https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.location)}' target='_blank'>${x.location}</a></span>` : ''}
+                    ${x.description ? `<br><span class="exp-desc">${x.description}</span>` : ''}
+                </li>
+            `).join('')}
         </ul>
         <h3>Contact</h3>
         <ul>
