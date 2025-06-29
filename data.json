@@ -33,7 +33,8 @@
       "start": "septembre 2024",
       "end": "aujourd'hui",
       "location": "Aurillac, France",
-      "description": "Développement full stack sur la plateforme DataFinance."
+      "description": "Développement full stack sur la plateforme DataFinance.",
+      "logo": "logos/cegid.png"
     },
     {
       "title": "Développeur",
@@ -42,7 +43,8 @@
       "start": "janvier 2019",
       "end": "septembre 2024",
       "location": "Aurillac, France",
-      "description": "Développement et maintenance de l’ERP XRP Ultimate Finance (ex-Qualiac"
+      "description": "Développement et maintenance de l’ERP XRP Ultimate Finance (ex-Qualiac)",
+      "logo": "logos/cegid.png"
     },
     {
       "title": "Développeur",
@@ -51,7 +53,8 @@
       "start": "juillet 2018",
       "end": "décembre 2018",
       "location": "Aurillac, France",
-      "description": "Développement et maintenance de l’ERP Qualiac."
+      "description": "Développement et maintenance de l’ERP Qualiac.",
+      "logo": "logos/qualiac.png"
     },
     {
       "title": "Développeur",
@@ -60,7 +63,8 @@
       "start": "septembre 2016",
       "end": "juillet 2018",
       "location": "Génelard, France",
-      "description": "Développement de modules pour l’ERP Sparkwine."
+      "description": "Développement de modules pour l’ERP Sparkwine.",
+      "logo": "logos/greenspark.png"
     },
     {
       "title": "Développeur en alternance",
@@ -69,7 +73,8 @@
       "start": "octobre 2015",
       "end": "septembre 2016",
       "location": "Génelard, France",
-      "description": "Alternance en développement logiciel."
+      "description": "Alternance en développement logiciel.",
+      "logo": "logos/greenspark.png"
     }
   ],
   "projects": [

@@ -48,11 +48,14 @@ function renderCV() {
         <h3>Expérience professionnelle</h3>
         <ul>
             ${DATA.experience.map(x => `
-                <li>
-                    <strong>${x.title}</strong> – ${x.company}, produit ${x.product}<br>
-                    <span class="exp-dates">${x.start} - ${x.end}</span>
-                    ${x.location ? `<br><span class="exp-location"><a href='https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.location)}' target='_blank'>${x.location}</a></span>` : ''}
-                    ${x.description ? `<br><span class="exp-desc">${x.description}</span>` : ''}
+                <li style="display:flex;align-items:center;gap:1em;">
+                    ${x.logo ? `<img src='${x.logo}' alt='${x.company} logo' style='height:32px;width:auto;border-radius:4px;'>` : ''}
+                    <div>
+                        <strong>${x.title}</strong> – ${x.company}, produit ${x.product}<br>
+                        <span class="exp-dates">${x.start} - ${x.end}</span>
+                        ${x.location ? `<br><span class="exp-location"><a href='https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.location)}' target='_blank'>${x.location}</a></span>` : ''}
+                        ${x.description ? `<br><span class="exp-desc">${x.description}</span>` : ''}
+                    </div>
                 </li>
             `).join('')}
         </ul>
