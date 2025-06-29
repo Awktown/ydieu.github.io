@@ -54,7 +54,7 @@
       "end": "décembre 2018",
       "location": "Aurillac, France",
       "description": "Développement et maintenance de l’ERP Qualiac.",
-      "logo": "logos/qualiac.png"
+      "logo": "logos/qualiac.jpg"
     },
     {
       "title": "Développeur",
@@ -64,7 +64,7 @@
       "end": "juillet 2018",
       "location": "Génelard, France",
       "description": "Développement de modules pour l’ERP Sparkwine.",
-      "logo": "logos/greenspark.png"
+      "logo": "logos/greenspark.jpg"
     },
     {
       "title": "Développeur en alternance",
@@ -74,7 +74,7 @@
       "end": "septembre 2016",
       "location": "Génelard, France",
       "description": "Alternance en développement logiciel.",
-      "logo": "logos/greenspark.png"
+      "logo": "logos/greenspark.jpg"
     }
   ],
   "projects": [
