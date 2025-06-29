@@ -6,8 +6,9 @@ body {
     color: #222;
 }
 nav {
-    background: #2d3e50;
-    padding: 0.5em 0;
+    background: #ff6600;
+    padding: 1.5em 0 0.5em 0;
+    margin-top: 0;
 }
 .menu {
     display: flex;
@@ -16,6 +17,10 @@ nav {
     list-style: none;
     margin: 0;
     padding: 0;
+    align-items: center;
+}
+.menu li {
+    margin-left: 0 !important;
 }
 .menu li a {
     color: #fff;
@@ -26,8 +31,35 @@ nav {
     border-radius: 4px;
     transition: background 0.2s;
 }
-.menu li a.active, .menu li a:hover {
-    background: #0077b6;
+.menu li a.active {
+    background: #fff;
+    color: #ff6600;
+    box-shadow: 0 2px 8px rgba(255,102,0,0.08);
+}
+.menu li a:hover:not(.active) {
+    background: #ff6600;
+    color: #fff;
+}
+#dark-switch {
+    font-size: 1.3em;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.2em 0.6em;
+    transition: background 0.2s;
+}
+#dark-switch:hover {
+    background: #fff;
+    color: #ff6600;
+    border-radius: 50%;
+}
+body.dark #dark-switch {
+    color: #ff6600;
+}
+body.dark #dark-switch:hover {
+    background: #ff6600;
+    color: #fff;
 }
 main {
     max-width: 700px;
@@ -57,7 +89,7 @@ section {
     margin-bottom: 2rem;
 }
 section h3 {
-    color: #2d3e50;
+    color: #ff6600;
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 0.3em;
     margin-bottom: 1em;
@@ -83,7 +115,7 @@ li {
     transition: background 0.2s;
 }
 .project:hover {
-    background: #e0eaff;
+    background: #ffe5d1;
 }
 .project-title {
     font-weight: bold;
@@ -222,7 +254,7 @@ a:hover {
     margin-bottom: 0.2em;
 }
 .exp-company {
-    color: #0077b6;
+    color: #ff6600;
     font-weight: 500;
     margin-bottom: 0.2em;
 }
@@ -237,7 +269,7 @@ a:hover {
     text-decoration: underline;
 }
 .exp-location a:hover {
-    color: #0077b6;
+    color: #ff6600;
 }
 .exp-roles {
     margin: 0.7em 0 0 0;
@@ -246,7 +278,7 @@ a:hover {
 }
 .exp-roles li {
     padding: 0.7em 0 0.7em 0;
-    border-bottom: 2.5px solid #0077b6;
+    border-bottom: 2.5px solid #ff6600;
     margin: 0;
     background: none;
 }
@@ -304,10 +336,10 @@ a:hover {
     text-decoration: underline;
 }
 .edu-location a:hover {
-    color: #0077b6;
+    color: #ff6600;
 }
 .edu-mention {
-    color: #0077b6;
+    color: #ff6600;
     font-weight: 500;
     margin-bottom: 0.2em;
 }
@@ -315,29 +347,185 @@ a:hover {
     color: #555;
     font-size: 0.98em;
 }
-@media (max-width: 800px) {
-    .exp-item {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1em;
+button, .project a {
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5em 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:hover, .project a:hover {
+    background: #e65c00;
+}
+/* Compétences */
+.skills-list {
+    margin: 1.5em 0 2em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.skill-label {
+    min-width: 110px;
+    font-weight: 500;
+}
+.skill-bar-bg {
+    flex: 1;
+    background: #ffe5d1;
+    border-radius: 8px;
+    height: 12px;
+    overflow: hidden;
+}
+.skill-bar {
+    height: 100%;
+    background: #ff6600;
+    border-radius: 8px;
+    transition: width 0.7s;
+}
+/* Suppression du style témoignages (inutile) */
+.testimonials-list, .testimonial-item, .testimonial-text, .testimonial-author, .testimonial-role {
+    display: none !important;
+}
+/* Mode sombre */
+body.dark {
+    background: #181818;
+    color: #f7f7f7;
+}
+body.dark main {
+    background: #232323;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+body.dark .exp-item, body.dark .edu-item, body.dark .project, body.dark .testimonial-item {
+    background: #232323;
+    color: #f7f7f7;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+}
+body.dark .skills-list .skill-bar-bg {
+    background: #333;
+}
+body.dark .skills-list .skill-bar {
+    background: #ff6600;
+}
+body.dark .testimonials-list .testimonial-item {
+    background: #232323;
+    border-left: 5px solid #ff6600;
+}
+body.dark .download-btn, body.dark .project a {
+    background: #ff6600;
+    color: #fff;
+}
+body.dark .download-btn:hover, body.dark .project a:hover {
+    background: #e65c00;
+}
+body.dark nav {
+    background: #232323;
+}
+body.dark .menu li a.active {
+    background: #232323;
+    color: #ff6600;
+}
+body.dark .menu li a:hover:not(.active) {
+    background: #ff6600;
+    color: #fff;
+}
+.mode-switch {
+    margin: 2em 0 0 0;
+    text-align: right;
+}
+.mode-switch label {
+    cursor: pointer;
+    font-weight: 500;
+    color: #ff6600;
+}
+body.dark .mode-switch label {
+    color: #fff;
+}
+/* Switch dark mode façon MUI */
+.switch-dark {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    margin-left: auto;
+    padding: 0.2em 0.6em;
+}
+.switch-dark .switch-track {
+    width: 38px;
+    height: 20px;
+    background: #fff;
+    border-radius: 12px;
+    position: relative;
+    margin: 0 0.5em;
+    transition: background 0.2s;
+    border: 1.5px solid #ff6600;
+}
+.switch-dark .switch-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: #ff6600;
+    border-radius: 50%;
+    transition: left 0.2s, background 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+.switch-dark.dark .switch-track {
+    background: #ff6600;
+}
+.switch-dark.dark .switch-thumb {
+    left: 20px;
+    background: #fff;
+}
+.switch-dark .switch-emoji {
+    font-size: 1.1em;
+    width: 1.5em;
+    text-align: center;
+}
+/* Style impression/PDF épuré */
+@media print {
+    nav, .download-btn, .mode-switch, #dark-switch, .menu { display: none !important; }
+    body, main {
+        background: #fff !important;
+        color: #222 !important;
+        box-shadow: none !important;
     }
-    .exp-logo {
-        margin-bottom: 0.7em;
-        margin-right: 0;
-        width: 48px;
-        height: 48px;
-        border-radius: 8px;
+    .exp-item, .edu-item, .project, .skills-list, .hobbies-block {
+        background: none !important;
+        box-shadow: none !important;
+        color: #222 !important;
     }
-    .edu-item {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1em;
+    .exp-logo, .edu-logo {
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
     }
-    .edu-logo {
-        margin-bottom: 0.7em;
-        margin-right: 0;
-        width: 48px;
-        height: 48px;
-        border-radius: 8px;
+    .exp-roles li, .edu-list, .exp-list {
+        border: none !important;
+        background: none !important;
+    }
+    a, a:visited {
+        color: #222 !important;
+        text-decoration: underline;
+    }
+    h1, h2, h3 {
+        color: #222 !important;
+    }
+    .skills-list .skill-bar-bg, .skills-list .skill-bar {
+        background: #eee !important;
+        color: #222 !important;
+    }
+    .profile-photo img {
+        filter: grayscale(1);
+    }
+    .exp-company, .edu-mention {
+        color: #222 !important;
     }
 }

@@ -106,5 +106,24 @@
       "details": "Voici la description détaillée du projet 2. Tu peux ajouter des images, des liens, etc.",
       "link": "#"
     }
+  ],
+  "skills": [
+    { "label": "JavaScript", "level": 90 },
+    { "label": "HTML/CSS", "level": 85 },
+    { "label": "Node.js", "level": 80 },
+    { "label": "SQL", "level": 75 },
+    { "label": "React", "level": 70 }
+  ],
+  "testimonials": [
+    {
+      "author": "Jean Dupont",
+      "role": "Manager chez Cegid",
+      "text": "Yannick est un développeur fiable, créatif et très impliqué dans ses missions."
+    },
+    {
+      "author": "Sophie Martin",
+      "role": "Product Owner",
+      "text": "Toujours force de proposition, il sait s’adapter à tous les contextes."
+    }
   ]
 }

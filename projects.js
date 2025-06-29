@@ -43,6 +43,23 @@ function renderProfile() {
     `;
 }
 
+function renderSkills() {
+    if (!DATA.skills) return '';
+    return `
+        <h3>Compétences</h3>
+        <div class="skills-list">
+            ${DATA.skills.map(skill => `
+                <div class="skill-item">
+                    <span class="skill-label">${skill.label}</span>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar" style="width:${skill.level}%;"></div>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
 function renderCV() {
     if (!DATA.profile) return;
     const hobbyIcons = {
@@ -53,6 +70,8 @@ function renderCV() {
     };
     cvSection.innerHTML = `
         ${renderProfile()}
+        <button id="download-pdf" class="download-btn">Télécharger le CV (PDF)</button>
+        ${renderSkills()}
         <h3>Expérience professionnelle</h3>
         <div class="exp-list">
             ${DATA.experience.map((x, i) => `
@@ -98,6 +117,11 @@ function renderCV() {
             `).join('')}
         </div>
     `;
+    // PDF
+    setTimeout(() => {
+        const btn = document.getElementById('download-pdf');
+        if (btn) btn.onclick = () => generatePDF();
+    }, 0);
 }
 
 function renderProjects() {
@@ -159,3 +183,17 @@ fetch('data.json')
             showSection('cv');
         }
     });
+
+// Génération PDF (html2pdf.js doit être inclus dans index.html)
+function generatePDF() {
+    if (window.html2pdf) {
+        html2pdf(document.getElementById('cv-section'));
+    } else {
+        alert('La génération PDF nécessite html2pdf.js');
+    }
+}
+
+// Mode sombre dans la barre de menu
+window.addEventListener('DOMContentLoaded', () => {
+    // Suppression du bouton dark mode : ne rien ajouter dans le menu
+});
