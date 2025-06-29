@@ -37,6 +37,7 @@ function renderProfile() {
                     <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(profile.location)}" target="_blank">${profile.location}</a>
                 </p>
                 <p class="email"><a href="mailto:${profile.email}">${profile.email}</a></p>
+                ${profile.linkedin ? `<p class="linkedin"><a href="${profile.linkedin}" target="_blank" rel="noopener noreferrer"><img src="logos/linkedin.svg" alt="LinkedIn" style="height:1.2em;vertical-align:middle;margin-right:0.3em;">LinkedIn</a></p>` : ''}
             </div>
         </div>
     `;
