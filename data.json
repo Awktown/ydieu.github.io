@@ -1,35 +1,47 @@
 {
   "profile": {
     "name": "Yannick Dieu",
-    "title": "Développeur Full Stack test",
-    "location": "Aurillac, France",
-    "email": "votre.email@exemple.com"
+    "title": "Développeur Full Stack",
+    "location": "Arpajon sur Cère 15130",
+    "email": "yannick.dieu.13@gmail.com"
   },
   "education": [
     {
-      "label": "Licence Pro Développement d'applications mobiles",
-      "school": "IUT Clermont-Ferrand",
+      "label": "Licence Professionnelle Développement d'applications mobiles",
+      "school": "IUT de l'Université d'Auvergne - Aubière",
       "years": "2015-2016"
     },
     {
       "label": "DUT Informatique",
-      "school": "IUT Clermont-Ferrand",
+      "school": "IUT de l'Université d'Auvergne - Aubière",
       "years": "2013-2015",
       "mention": "Mention Bien"
     }
   ],
   "experience": [
     {
-      "title": "Développeur Full Stack test",
+      "title": "Développeur Full Stack",
       "company": "Cegid",
-      "product": "DataFinance",
+      "product": "Cegid DataFinance",
       "period": "septembre 2024 - aujourd'hui"
     },
     {
       "title": "Développeur",
       "company": "Cegid",
-      "product": "XRP Ultimate Finance",
+      "product": "Cegid XRP Ultimate Finance",
       "period": "juillet 2018 - septembre 2024"
+    },
+    {
+      "title": "Développeur",
+      "company": "Greenspark",
+      "product": "Sparkwine ERP et solutions liées",
+      "period": "septembre 2016 - juillet 2018"
+    },
+    {
+      "title": "Développeur en alternance",
+      "company": "Greenspark",
+      "product": "Sparkwine ERP et solutions liées",
+      "period": "octobre 2015 - septembre 2016"
     }
   ],
   "projects": [
