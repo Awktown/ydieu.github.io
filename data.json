@@ -1,0 +1,51 @@
+{
+  "profile": {
+    "name": "Yannick Dieu",
+    "title": "Développeur Full Stack test",
+    "location": "Aurillac, France",
+    "email": "votre.email@exemple.com"
+  },
+  "education": [
+    {
+      "label": "Licence Pro Développement d'applications mobiles",
+      "school": "IUT Clermont-Ferrand",
+      "years": "2015-2016"
+    },
+    {
+      "label": "DUT Informatique",
+      "school": "IUT Clermont-Ferrand",
+      "years": "2013-2015",
+      "mention": "Mention Bien"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Développeur Full Stack test",
+      "company": "Cegid",
+      "product": "DataFinance",
+      "period": "septembre 2024 - aujourd'hui"
+    },
+    {
+      "title": "Développeur",
+      "company": "Cegid",
+      "product": "XRP Ultimate Finance",
+      "period": "juillet 2018 - septembre 2024"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Projet 1",
+      "description": "Description courte du projet 1.",
+      "details": "Voici la description détaillée du projet 1. Tu peux ajouter des images, des liens, etc.",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "title": "Projet 2",
+      "description": "Description courte du projet 2.",
+      "details": "Voici la description détaillée du projet 2. Tu peux ajouter des images, des liens, etc.",
+      "link": "#"
+    }
+  ]
+}
